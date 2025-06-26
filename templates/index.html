@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Agriculture Advisor</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Smart Agriculture Advisor</h1>
+    <form action="/predict" method="POST">
+        <label>Soil Type:</label>
+        <select name="soil_type">
+            <option>Black Soil</option>
+            <option>Alluvial Soil</option>
+            <option>Red Soil</option>
+            <option>Laterite Soil</option>
+            <option>Desert Soil</option>
+        </select><br><br>
+
+        <label>Location:</label>
+        <input type="text" name="location" placeholder="Enter city like Chennai, Delhi"><br><br>
+
+        <input type="submit" value="Get Advice">
+    </form>
+</body>
+</html>

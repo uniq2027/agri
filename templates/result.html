@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Result</title>
+</head>
+<body>
+    <h2>Prediction Result</h2>
+    <p><strong>Soil Type:</strong> {{ soil }}</p>
+    <p><strong>Location:</strong> {{ location }}</p>
+
+    <h3>🌾 Recommended Crops:</h3>
+    <ul>
+        {% for crop in crops %}
+            <li>{{ crop }}</li>
+        {% endfor %}
+    </ul>
+
+    <h3>🌦️ Weather Info:</h3>
+    <p><strong>Temperature:</strong> {{ weather.temp }}</p>
+    <p><strong>Rainfall:</strong> {{ weather.rain }}</p>
+    <p><strong>Advice:</strong> {{ weather.advice }}</p>
+
+    <br>
+    <a href="/">🔙 Go Back</a>
+</body>
+</html>

@@ -1,0 +1,84 @@
+
+ # What is SQLAlchemy?
+
+SQLAlchemy is a Python library that makes it easier to work with databases. It acts as a bridge between your Python code and the database.
+
+# In simple words:
+
+SQLAlchemy lets you use Python classes instead of SQL queries to create tables, insert data, and fetch results.
+
+# Key Features:
+
+* Object Relational Mapper (**ORM**) – write Python classes, not raw SQL
+* Works with many databases (like MySQL, PostgreSQL, SQLite)
+* Helps avoid SQL injection and makes database code cleaner
+
+
+
+
+
+# What is SQLite?
+
+SQLite is a lightweight, file-based database system.
+
+# Key Features:
+
+* Stores data in a single file (e.g., `agri.db`)
+* No need to install a separate database server
+* Great for small projects, prototypes, and local apps
+
+
+
+# SQLAlchemy + SQLite in Flask
+
+Together, they let you:
+
+1. Define database tables as Python classes (using SQLAlchemy)
+2. Store data locally in a file (using SQLite)
+
+---
+
+# Example
+
+**Define model (table) using SQLAlchemy:**
+
+
+from flask_sqlalchemy import SQLAlchemy
+db = SQLAlchemy()
+
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(50), unique=True)
+    password = db.Column(db.String(100))
+
+
+**SQLite file is created here:**
+
+
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///agri.db'
+
+
+Now SQLAlchemy will create a table `user` inside the file `agri.db`.
+
+
+# Analogy:
+
+| Concept            | Real-World Analogy        |
+| ------------------ | ------------------------- |
+| SQLAlchemy         | Translator (Python ↔ SQL) |
+| SQLite             | Notebook to store data    |
+| User class (model) | Table in the database     |
+
+
+
+
+#front end
+#    html
+#    css
+
+#logic:
+#    python
+    #  flask
+
+#database
+     #sqlite

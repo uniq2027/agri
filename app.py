@@ -8,9 +8,8 @@ from flask import Flask, render_template, request, redirect, url_for, flash, ses
 from flask_sqlalchemy import SQLAlchemy
 from models import db, User
 from werkzeug.security import generate_password_hash, check_password_hash
-from flask_sqlalchemy import SQLAlchemy
-from models import db, User
-from werkzeug.security import generate_password_hash, check_password_hash
+
+
 
 
 app = Flask(__name__)
@@ -36,6 +35,9 @@ def index():
         return render_template('home.html', user=session['user'])
     return redirect(url_for('login'))
 
+
+
+
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     if request.method == 'POST':
@@ -52,6 +54,10 @@ def register():
         flash('Registered successfully! Please log in.')
         return redirect(url_for('login'))
     return render_template('register.html')
+
+
+
+
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():

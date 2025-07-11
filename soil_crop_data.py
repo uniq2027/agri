@@ -1,4 +1,5 @@
 def get_crops_by_soil(soil_type):
+    
     soil_crop_map = {
         "Black Soil": ["Cotton", "Soybean", "Pulses"],
         "Alluvial Soil": ["Rice", "Wheat", "Sugarcane"],
